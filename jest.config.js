@@ -8,7 +8,7 @@ module.exports = {
   testEnvironment: "node",
   roots: ["<rootDir>/tests"],
   testMatch: ["**/*.test.ts", "**/*.spec.ts"],
-  setupFiles: ["<rootDir>/jest.setup.ts"],
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
 
   //  make Jest read the alias straight from tsconfig
   modulePaths: [compilerOptions.baseUrl], // "=" "."
