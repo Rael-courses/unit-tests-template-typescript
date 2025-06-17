@@ -1,0 +1,12 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "npm: build", // <── used by preLaunchTask
+      "type": "npm",
+      "script": "build", // calls: npm run build → tsc -p tsconfig.build.json
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}

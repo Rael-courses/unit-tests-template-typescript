@@ -11,7 +11,7 @@ async function start() {
   console.log(`Text to normalize: "${textToNormalize}"`);
   const stringFormatter = container.resolve(StringFormatter);
   const normalizedText = stringFormatter.normalize(textToNormalize);
-  console.log(`Normalized text: ${normalizedText}`);
+  console.log(`Normalized text: "${normalizedText}"`);
 
   console.log("Application ends...");
 }

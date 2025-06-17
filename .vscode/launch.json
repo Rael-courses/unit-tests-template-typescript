@@ -4,6 +4,7 @@
     {
       "name": "Start app",
       "request": "launch",
+      "preLaunchTask": "npm: build",
       "runtimeArgs": ["run-script", "start"],
       "runtimeExecutable": "npm",
       "skipFiles": ["<node_internals>/**"],
