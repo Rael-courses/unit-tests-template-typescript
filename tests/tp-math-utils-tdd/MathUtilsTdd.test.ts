@@ -25,4 +25,26 @@ describe("Math Utils TDD", () => {
       expect(act).toThrow("Division by zero is not allowed.");
     });
   });
+
+  describe("method remove duplicates", () => {
+    it("should throw an error when array is empty", () => {
+      const act = () => mathUtils.removeDuplicates([]);
+      expect(act).toThrow("Array cannot be empty.");
+    });
+
+    it.each`
+      arr                | expected
+      ${[1]}             | ${[1]}
+      ${[1, 2, 3]}       | ${[1, 2, 3]}
+      ${[1, 2, 2, 3]}    | ${[1, 2, 3]}
+      ${[1, 2, 2, 1, 3]} | ${[1, 2, 3]}
+      ${[2, 2, 1, 4, 3]} | ${[2, 1, 4, 3]}
+    `(
+      "should return an array representing a set of input array: $arr",
+      ({ arr, expected }) => {
+        const result = mathUtils.removeDuplicates(arr);
+        expect(result).toEqual(expected);
+      }
+    );
+  });
 });
