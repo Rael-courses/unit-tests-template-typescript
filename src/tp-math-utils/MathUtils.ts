@@ -27,4 +27,19 @@ export class MathUtils {
       return this.multiply(v1, v2);
     });
   }
+
+  public removeDuplicates(arr: number[]): number[] {
+    if (arr.length === 0) {
+      throw new Error("Array must not be empty.");
+    }
+
+    const result: number[] = [];
+    for (const value of arr) {
+      if (!result.includes(value)) {
+        result.push(value);
+      }
+    }
+
+    return result;
+  }
 }

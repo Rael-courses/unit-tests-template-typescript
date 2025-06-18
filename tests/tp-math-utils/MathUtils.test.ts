@@ -77,4 +77,20 @@ describe("MathUtils", () => {
       expect(act).toThrow("Arrays must not be empty.");
     });
   });
+
+  describe("method removeDuplicates", () => {
+    it("should remove duplicates from an array", () => {
+      const arr = [1, 0, 2, 3, 2, 4, 4, 5, 1];
+      const expected = [1, 0, 2, 3, 4, 5];
+      const result = mathUtils.removeDuplicates(arr);
+      expect(result).toEqual(expected);
+    });
+
+    it("should throw an error when the array is empty", () => {
+      const act = () => {
+        mathUtils.removeDuplicates([]);
+      };
+      expect(act).toThrow("Array must not be empty.");
+    });
+  });
 });
