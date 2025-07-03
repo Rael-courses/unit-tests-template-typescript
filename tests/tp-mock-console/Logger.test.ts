@@ -37,7 +37,8 @@ describe("Logger", () => {
 
   describe("error", () => {
     afterEach(() => {
-      jest.clearAllMocks();
+      jest.resetAllMocks(); // Reset mock calls and implementations (not the original implementation, but the mock itself)
+      jest.restoreAllMocks(); // Restore original implementations
     });
 
     it.each`

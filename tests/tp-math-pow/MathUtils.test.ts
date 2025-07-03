@@ -4,6 +4,11 @@ import { container } from "tsyringe";
 describe("MathUtils", () => {
   const mathUtils = container.resolve(MathUtils);
 
+  afterEach(() => {
+    jest.resetAllMocks(); // Reset mock calls and implementations (not the original implementation, but the mock itself)
+    jest.restoreAllMocks(); // Restore original implementations
+  });
+
   describe("pow", () => {
     it.each`
       num  | exponent
@@ -12,7 +17,8 @@ describe("MathUtils", () => {
     `(
       "should call Math.pow with num=$num and exponent=$exponent",
       ({ num, exponent }) => {
-        Math.pow = jest.fn();
+        const whateverResult = 1; // Mocked result, not used in this test
+        jest.spyOn(Math, "pow").mockReturnValue(whateverResult);
         mathUtils.pow(num, exponent);
 
         expect(Math.pow).toHaveBeenCalledWith(num, exponent);
