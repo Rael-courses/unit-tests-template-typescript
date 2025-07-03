@@ -1,5 +1,9 @@
 export class Logger {
-  public log(input: string) {
-    console.log(input);
+  public logError(errorMessage: string) {
+    console.error(errorMessage);
+  }
+
+  public logInfo(infoMessage: string) {
+    console.log(infoMessage);
   }
 }
