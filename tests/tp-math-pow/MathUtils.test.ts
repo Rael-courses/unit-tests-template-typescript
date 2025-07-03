@@ -10,7 +10,7 @@ describe("MathUtils", () => {
       ${2} | ${3}
       ${3} | ${5}
     `(
-      "should return $expected when $num is raised to the power of $exponent",
+      "should call Math.pow with num=$num and exponent=$exponent",
       ({ num, exponent }) => {
         Math.pow = jest.fn();
         mathUtils.pow(num, exponent);
