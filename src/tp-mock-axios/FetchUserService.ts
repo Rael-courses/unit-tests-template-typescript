@@ -1,4 +1,6 @@
 import axios from "axios";
+import z from "zod";
+import { userSchema } from "./models/User";
 
 export class FetchUserService {
   private readonly apiUrl = "https://jsonplaceholder.typicode.com/users";
@@ -11,7 +13,13 @@ export class FetchUserService {
     }
 
     if (response.status === 200) {
-      return response.data;
+      const data = response.data;
+      const dataValidation = await z.array(userSchema).safeParseAsync(data);
+      if (!dataValidation.success) {
+        throw new Error("Données utilisateur invalides");
+      }
+
+      return dataValidation.data.map((user) => user.name);
     }
 
     throw new Error("Une erreur est survenue");
