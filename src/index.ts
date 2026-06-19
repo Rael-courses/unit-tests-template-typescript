@@ -1,7 +1,7 @@
 // reflect-metadata is required for tsyringe to work properly and it should be imported at the top of the entry point file.
 import "reflect-metadata";
 // This file is the entry point for the application.
-import { multiplyArrays } from "../tests/tp-multiplyArrays";
+import { NumberValidation } from "../tests/tp-1/NumberValidation";
 
 // async function start() {
 //   console.log("Application starts...");
@@ -20,7 +20,7 @@ import { multiplyArrays } from "../tests/tp-multiplyArrays";
 async function start2() {
   console.log("Application starts...");
 
-  const result = multiplyArrays([3, 5, 2], [4, 3, 1]);
+  const result = new NumberValidation().validateNumber("123");
   console.log(`Result: ${result}`);
 
   console.log("Application ends...");
