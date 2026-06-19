@@ -1,7 +1,7 @@
 // reflect-metadata is required for tsyringe to work properly and it should be imported at the top of the entry point file.
 import "reflect-metadata";
 // This file is the entry point for the application.
-import { divide } from "../tests/tp-divide";
+import { multiplyArrays } from "../tests/tp-multiplyArrays";
 
 // async function start() {
 //   console.log("Application starts...");
@@ -20,8 +20,8 @@ import { divide } from "../tests/tp-divide";
 async function start2() {
   console.log("Application starts...");
 
-  const result = divide(15, 0);
-  console.log(`Result of divide(15, 0): ${result}`);
+  const result = multiplyArrays([3, 5, 2], [4, 3, 1]);
+  console.log(`Result: ${result}`);
 
   console.log("Application ends...");
 }

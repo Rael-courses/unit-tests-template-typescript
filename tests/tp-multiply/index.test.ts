@@ -1,6 +1,6 @@
 import { multiply } from ".";
 
-describe("tp multiply", () => {
+describe("tp-multiply", () => {
   describe("multiply", () => {
     it.each`
       num1   | num2   | expected
