@@ -8,11 +8,12 @@
     "emitDecoratorMetadata": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitAny": true,
-    "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["./src/*"]
     },
+    "types": ["jest", "node"],
+    "skipLibCheck": true,
     "noEmit": true
   },
-  "include": ["src/**/*", "tests/**/*"]
+  "include": ["src/**/*", "tests/**/*", "jest.setup.ts"]
 }
