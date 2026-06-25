@@ -37,5 +37,17 @@ describe("FizzBuzz", () => {
       // Assert
       expect(result).toBe(expected);
     });
+
+    it("should return the number as a string when n is a multiple of neither 3 nor 5", () => {
+      // Arrange
+      const input = 13;
+      const expected = "13";
+
+      // Act
+      const result = calcFizzbuzz(input);
+
+      // Assert
+      expect(result).toBe(expected);
+    });
   });
 });
