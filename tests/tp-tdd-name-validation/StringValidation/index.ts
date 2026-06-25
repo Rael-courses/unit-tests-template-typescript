@@ -9,6 +9,11 @@ export class StringValidation {
   }
 
   public validateLowercaseLettersOnly(input: string): string {
+    if (!/^[a-z]+$/.test(input)) {
+      throw new Error(
+        "La chaîne de caractère ne doit contenir que des lettres minuscules de l'alphabet",
+      );
+    }
     return input;
   }
 }
