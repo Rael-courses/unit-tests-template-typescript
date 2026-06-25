@@ -13,5 +13,19 @@ describe("StringValidation", () => {
       // Assert
       expect(result).toBe(input);
     });
+
+    it("should throw when the input contains a non-letter character", () => {
+      // Arrange
+      const stringValidation = new StringValidation();
+      const input = "abc123";
+
+      // Act
+      const act = () => stringValidation.validateLettersOnly(input);
+
+      // Assert
+      expect(act).toThrow(
+        "La chaîne de caractère ne doit contenir que des lettres de l'alphabet",
+      );
+    });
   });
 });
