@@ -1,13 +1,18 @@
 (module
+  ;; calcFizzbuzz(n) -> code : 3 = fizzbuzz, 1 = fizz, 2 = buzz, 0 = nombre
   (func (export "calcFizzbuzz") (param $n i32) (result i32)
-    ;; n % 15 == 0 -> 3 (fizzbuzz)
-    (if (i32.eqz (i32.rem_u (local.get $n) (i32.const 15)))
+    (local $isFizz i32) ;; n multiple de 3
+    (local $isBuzz i32) ;; n multiple de 5
+    (local.set $isFizz (i32.eqz (i32.rem_u (local.get $n) (i32.const 3))))
+    (local.set $isBuzz (i32.eqz (i32.rem_u (local.get $n) (i32.const 5))))
+    ;; multiple de 3 ET de 5 -> 3 (fizzbuzz)
+    (if (i32.and (local.get $isFizz) (local.get $isBuzz))
       (then (return (i32.const 3))))
-    ;; n % 3 == 0 -> 1 (fizz)
-    (if (i32.eqz (i32.rem_u (local.get $n) (i32.const 3)))
+    ;; multiple de 3 -> 1 (fizz)
+    (if (local.get $isFizz)
       (then (return (i32.const 1))))
-    ;; n % 5 == 0 -> 2 (buzz)
-    (if (i32.eqz (i32.rem_u (local.get $n) (i32.const 5)))
+    ;; multiple de 5 -> 2 (buzz)
+    (if (local.get $isBuzz)
       (then (return (i32.const 2))))
-    ;; else -> 0 (number)
+    ;; sinon -> 0 (nombre)
     (i32.const 0)))
