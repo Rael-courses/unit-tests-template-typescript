@@ -9,6 +9,9 @@ describe("StringValidation", () => {
 
       // Act
       const result = stringValidation.validateLettersOnly(input);
+
+      // Assert
+      expect(result).toBe(input);
     });
   });
 });
