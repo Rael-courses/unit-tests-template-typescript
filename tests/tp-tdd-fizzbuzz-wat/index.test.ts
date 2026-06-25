@@ -14,6 +14,7 @@ describe("FizzBuzz (WAT)", () => {
       const result = calcFizzbuzz(input);
 
       // Assert
+      expect(result).toBe(expected);
     });
   });
 });
