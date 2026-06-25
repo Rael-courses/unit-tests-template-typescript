@@ -84,4 +84,18 @@ describe("StringValidation", () => {
       );
     });
   });
+
+  describe("validateCapitalized", () => {
+    it("should return the input when it is one uppercase letter followed by lowercase letters", () => {
+      // Arrange
+      const stringValidation = new StringValidation();
+      const input = "Pierre";
+
+      // Act
+      const result = stringValidation.validateCapitalized(input);
+
+      // Assert
+      expect(result).toBe(input);
+    });
+  });
 });
