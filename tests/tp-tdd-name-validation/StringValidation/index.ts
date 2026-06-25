@@ -27,6 +27,11 @@ export class StringValidation {
   }
 
   public validateCapitalized(input: string): string {
+    if (!/^[A-Z][a-z]*$/.test(input)) {
+      throw new Error(
+        "Le nom doit être constitué d'une première lettre majuscule suivie de minuscules",
+      );
+    }
     return input;
   }
 }
