@@ -13,5 +13,17 @@ describe("FizzBuzz", () => {
       // Assert
       expect(result).toBe(expected);
     });
+
+    it("should return 'fizz' when n is a multiple of 3 (and not of 5)", () => {
+      // Arrange
+      const input = 9;
+      const expected = "fizz";
+
+      // Act
+      const result = calcFizzbuzz(input);
+
+      // Assert
+      expect(result).toBe(expected);
+    });
   });
 });
