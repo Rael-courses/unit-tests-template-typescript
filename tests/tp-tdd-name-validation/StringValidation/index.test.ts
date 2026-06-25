@@ -97,5 +97,26 @@ describe("StringValidation", () => {
       // Assert
       expect(result).toBe(input);
     });
+
+    it.each`
+      input
+      ${"pierre"}
+      ${"PIERRE"}
+      ${"Pierr3"}
+    `(
+      "should throw when the input is not one uppercase letter followed by lowercase letters",
+      ({ input }) => {
+        // Arrange
+        const stringValidation = new StringValidation();
+
+        // Act
+        const act = () => stringValidation.validateCapitalized(input);
+
+        // Assert
+        expect(act).toThrow(
+          "Le nom doit être constitué d'une première lettre majuscule suivie de minuscules",
+        );
+      },
+    );
   });
 });
