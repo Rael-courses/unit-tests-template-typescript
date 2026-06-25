@@ -56,4 +56,18 @@ describe("StringValidation", () => {
       );
     });
   });
+
+  describe("validateUppercaseLettersOnly", () => {
+    it("should return the input when it contains only uppercase letters", () => {
+      // Arrange
+      const stringValidation = new StringValidation();
+      const input = "ABC";
+
+      // Act
+      const result = stringValidation.validateUppercaseLettersOnly(input);
+
+      // Assert
+      expect(result).toBe(input);
+    });
+  });
 });
