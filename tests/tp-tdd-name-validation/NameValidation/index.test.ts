@@ -14,11 +14,42 @@ describe("NameValidation", () => {
       expect(result).toBe(input);
     });
 
+    it("should return the input for a space-separated name whose parts are each capitalized", () => {
+      // Arrange
+      const nameValidation = new NameValidation();
+      const input = "Jean Pierre";
+
+      // Act
+      const result = nameValidation.validateName(input);
+
+      // Assert
+      expect(result).toBe(input);
+    });
+
+    it.each`
+      input
+      ${"Jean;Pierre"}
+      ${"Jean-Pierr3"}
+    `(
+      "should throw when the input contains a character other than letters, spaces or hyphens",
+      ({ input }) => {
+        // Arrange
+        const nameValidation = new NameValidation();
+
+        // Act
+        const act = () => nameValidation.validateName(input);
+
+        // Assert
+        expect(act).toThrow(
+          "Le nom ne doit contenir que des lettres, espaces ou tirets",
+        );
+      },
+    );
+
     it.each`
       input
       ${"jean-PierRe"}
       ${"Jean-pierre"}
-      ${"Jean-Pierr3"}
     `(
       "should throw when a part is not one uppercase letter followed by lowercase letters",
       ({ input }) => {
