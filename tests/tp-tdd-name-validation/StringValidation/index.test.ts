@@ -28,4 +28,18 @@ describe("StringValidation", () => {
       );
     });
   });
+
+  describe("validateLowercaseLettersOnly", () => {
+    it("should return the input when it contains only lowercase letters", () => {
+      // Arrange
+      const stringValidation = new StringValidation();
+      const input = "abc";
+
+      // Act
+      const result = stringValidation.validateLowercaseLettersOnly(input);
+
+      // Assert
+      expect(result).toBe(input);
+    });
+  });
 });
