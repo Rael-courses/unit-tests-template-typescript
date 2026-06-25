@@ -1,3 +1,5 @@
+import { calcFizzbuzz } from ".";
+
 describe("FizzBuzz", () => {
   describe("calcFizzbuzz", () => {
     it("should return 'fizzbuzz' when n is a multiple of 15", () => {
