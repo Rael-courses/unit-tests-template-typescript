@@ -11,6 +11,7 @@ describe("FizzBuzz", () => {
       const result = calcFizzbuzz(input);
 
       // Assert
+      expect(result).toBe(expected);
     });
   });
 });
