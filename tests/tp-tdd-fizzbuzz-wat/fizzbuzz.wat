@@ -1,3 +1,7 @@
 (module
   (func (export "calcFizzbuzz") (param $n i32) (result i32)
-    i32.const 3))
+    ;; n % 15 == 0 -> 3 (fizzbuzz)
+    (if (i32.eqz (i32.rem_u (local.get $n) (i32.const 15)))
+      (then (return (i32.const 3))))
+    ;; else -> 1 (fake default until rule 3)
+    (i32.const 1)))
