@@ -16,4 +16,8 @@ export class StringValidation {
     }
     return input;
   }
+
+  public validateUppercaseLettersOnly(input: string): string {
+    return input;
+  }
 }
