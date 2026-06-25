@@ -7,4 +7,8 @@ export class StringValidation {
     }
     return input;
   }
+
+  public validateLowercaseLettersOnly(input: string): string {
+    return input;
+  }
 }
