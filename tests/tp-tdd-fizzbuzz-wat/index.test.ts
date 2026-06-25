@@ -16,5 +16,20 @@ describe("FizzBuzz (WAT)", () => {
       // Assert
       expect(result).toBe(expected);
     });
+
+    it("should return 1 (fizz) when n is a multiple of 3 (and not of 5)", async () => {
+      // Arrange
+      const { calcFizzbuzz } = await loadWatExports<{
+        calcFizzbuzz(n: number): number;
+      }>("fizzbuzz.wat");
+      const input = 9;
+      const expected = 1;
+
+      // Act
+      const result = calcFizzbuzz(input);
+
+      // Assert
+      expect(result).toBe(expected);
+    });
   });
 });
