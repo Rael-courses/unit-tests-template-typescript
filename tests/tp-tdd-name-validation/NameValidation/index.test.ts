@@ -13,5 +13,26 @@ describe("NameValidation", () => {
       // Assert
       expect(result).toBe(input);
     });
+
+    it.each`
+      input
+      ${"jean-PierRe"}
+      ${"Jean-pierre"}
+      ${"Jean-Pierr3"}
+    `(
+      "should throw when a part is not one uppercase letter followed by lowercase letters",
+      ({ input }) => {
+        // Arrange
+        const nameValidation = new NameValidation();
+
+        // Act
+        const act = () => nameValidation.validateName(input);
+
+        // Assert
+        expect(act).toThrow(
+          "Le nom peut être composé mais chacune de ses parties doit être faite d'une première lettre majuscule suivie de minuscules",
+        );
+      },
+    );
   });
 });
