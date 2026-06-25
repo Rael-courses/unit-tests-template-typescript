@@ -25,4 +25,8 @@ export class StringValidation {
     }
     return input;
   }
+
+  public validateCapitalized(input: string): string {
+    return input;
+  }
 }
