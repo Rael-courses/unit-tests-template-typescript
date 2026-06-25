@@ -1,3 +1,4 @@
 export function calcFizzbuzz(n: number): string {
-  return "fizzbuzz";
+  if (n % 15 === 0) return "fizzbuzz";
+  return "fizz";
 }
