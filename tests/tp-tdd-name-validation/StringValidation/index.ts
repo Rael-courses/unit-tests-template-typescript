@@ -18,6 +18,11 @@ export class StringValidation {
   }
 
   public validateUppercaseLettersOnly(input: string): string {
+    if (!/^[A-Z]+$/.test(input)) {
+      throw new Error(
+        "La chaîne de caractère ne doit contenir que des lettres majuscules de l'alphabet",
+      );
+    }
     return input;
   }
 }
