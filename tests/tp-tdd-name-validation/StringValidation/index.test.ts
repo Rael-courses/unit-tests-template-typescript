@@ -41,5 +41,19 @@ describe("StringValidation", () => {
       // Assert
       expect(result).toBe(input);
     });
+
+    it("should throw when the input contains an uppercase letter", () => {
+      // Arrange
+      const stringValidation = new StringValidation();
+      const input = "Abc";
+
+      // Act
+      const act = () => stringValidation.validateLowercaseLettersOnly(input);
+
+      // Assert
+      expect(act).toThrow(
+        "La chaîne de caractère ne doit contenir que des lettres minuscules de l'alphabet",
+      );
+    });
   });
 });
