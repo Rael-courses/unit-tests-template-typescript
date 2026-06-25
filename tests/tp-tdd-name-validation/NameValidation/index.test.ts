@@ -30,7 +30,27 @@ describe("NameValidation", () => {
 
         // Assert
         expect(act).toThrow(
-          "Le nom peut être composé mais chacune de ses parties doit être faite d'une première lettre majuscule suivie de minuscules",
+          "Le nom peut être composé mais chacune de ses parties doit être faite d'une première lettre majuscule suivie de minuscules et doit être munie de 2 caractères minimum",
+        );
+      },
+    );
+
+    it.each`
+      input
+      ${"J-Pierre"}
+      ${"P"}
+    `(
+      "should throw when a part has fewer than 2 characters",
+      ({ input }) => {
+        // Arrange
+        const nameValidation = new NameValidation();
+
+        // Act
+        const act = () => nameValidation.validateName(input);
+
+        // Assert
+        expect(act).toThrow(
+          "Le nom peut être composé mais chacune de ses parties doit être faite d'une première lettre majuscule suivie de minuscules et doit être munie de 2 caractères minimum",
         );
       },
     );
