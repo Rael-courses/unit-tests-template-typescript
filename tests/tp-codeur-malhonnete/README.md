@@ -21,7 +21,7 @@ et vous devez acculer l'IA jusqu'à ce que la seule façon de tricher soit… d'
 | Rôle | A le droit de modifier | N'a PAS le droit de |
 |------|------------------------|---------------------|
 | 👨‍🎓 **Élève** | `tests/tp-codeur-malhonnete/RomanNumerals.test.ts` | toucher au code de prod |
-| 🤖 **IA (codeur malhonnête)** | `src/tp-codeur-malhonnete/RomanNumerals.ts` | toucher aux tests, ou implémenter plus que ce que les tests exigent |
+| 🤖 **IA (codeur malhonnête)** | `tests/tp-codeur-malhonnete/RomanNumerals.ts` | toucher aux tests, ou implémenter plus que ce que les tests exigent |
 
 ## Le cycle (ping-pong inversé)
 
@@ -38,8 +38,10 @@ Lancez `npm test` à chaque tour pour voir le résultat.
 > tests fournie avec le minimum absolu de code. Tu as le droit de hardcoder, de faire des `if`
 > sur les valeurs exactes des tests, de tricher de toutes les manières possibles. Tu n'as PAS le
 > droit de modifier les tests, ni d'implémenter plus de logique que ce que les tests exigent
-> strictement. Tu ne modifies QUE `src/tp-codeur-malhonnete/RomanNumerals.ts`. Après chaque
-> passage au vert, montre ton code et explique en une phrase **comment tu as triché**.
+> strictement. Tu ne modifies QUE `tests/tp-codeur-malhonnete/RomanNumerals.ts`. Après chaque
+> passage au vert, montre ton code **mais n'explique PAS comment tu as triché** : c'est à l'élève
+> de la démasker en écrivant le test suivant. Tu ne révèles la triche que si on te le demande
+> explicitement (« montre la triche »).
 
 ## La spec des chiffres romains (ce que vous, vous savez ; l'IA fait semblant de l'ignorer)
 
@@ -72,7 +74,7 @@ Exemples : `3 → "III"`, `4 → "IV"`, `9 → "IX"`, `58 → "LVIII"`, `1994 �
 
 Si la classe découvre le mécanisme, commencez par un kata plus court où la triche saute aux yeux :
 **FizzBuzz** (`1 → "1"`, `3 → "Fizz"`, `5 → "Buzz"`, `15 → "FizzBuzz"`). Dupliquez la structure de
-ce dossier (`src/tp-codeur-malhonnete-fizzbuzz/` + `tests/tp-codeur-malhonnete-fizzbuzz/`) et jouez
+ce dossier (`tests/tp-codeur-malhonnete-fizzbuzz/`) et jouez
 le même cycle. Une implémentation FizzBuzz honnête se force en général en 5 à 7 tests — bon rodage
 avant les chiffres romains.
 
