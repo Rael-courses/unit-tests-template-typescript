@@ -4,10 +4,13 @@
   "testRunner": "jest",
   "jest": {
     "projectType": "custom",
-    "configFile": "jest.config.js"
+    "configFile": "jest.stryker.config.js"
   },
   "coverageAnalysis": "perTest",
-  "mutate": ["src/tp-mutation-arena/**/*.ts"],
+  "mutate": [
+    "tests/tp-mutation-arena/**/*.ts",
+    "!tests/tp-mutation-arena/**/*.test.ts"
+  ],
   "reporters": ["progress", "clear-text", "html"],
   "thresholds": {
     "high": 90,
