@@ -1,5 +1,5 @@
-import { StringFormatter } from "@/tp-string-formatter/StringFormatter";
 import { container } from "tsyringe";
+import { StringFormatter } from "./StringFormatter";
 
 describe("StringFormatter", () => {
   const stringFormatter = container.resolve(StringFormatter);

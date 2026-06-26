@@ -1,5 +1,5 @@
-import { RomanNumerals } from "@/tp-codeur-malhonnete/RomanNumerals";
 import { container } from "tsyringe";
+import { RomanNumerals } from "./RomanNumerals";
 
 /**
  * 🏴‍☠️ L'IA, le codeur malhonnête — manche chiffres romains.
