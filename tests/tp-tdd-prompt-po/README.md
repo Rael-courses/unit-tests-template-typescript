@@ -66,14 +66,20 @@ puis bascule en **juge** et écrit `results.json`. Tout le protocole est dans **
 Le dépôt contient **déjà** un cas modèle : **`US-1-persona`** (le « patron » à imiter),
 et un `system-prompt.md` volontairement **minimal** (à vous de le faire grandir).
 
-1. Ouvrez ce dossier dans votre agent et dites : **« Suis `AGENT.md` — itération 1 »**.
+> 📣 **Votre prompt d'itération** (à copier-coller à chaque tour) :
+> • après avoir écrit / ajouté un test → `Relance le juge — itération N RED` *(vous attendez du rouge)*
+> • après avoir corrigé le prompt → `Relance le juge — itération N GREEN` *(vous attendez du vert)*
+>
+> La 1re fois : `Suis AGENT.md — itération 1 RED`.
+
+1. Ouvrez ce dossier dans votre agent et dites : **« Suis `AGENT.md` — itération 1 RED »**.
 2. Ouvrez [`index.html`](index.html) dans Chrome, glissez-y `results.json` :
    **`US-1-persona` est 🔴 ROUGE** (le bot générique ne se présente pas comme Zéphyr).
 3. Éditez [`system-prompt.md`](system-prompt.md) : donnez-lui son **identité** (Zéphyr,
-   assistant SAV, courtois, en français). Dites **« Relance le juge — itération 2 »** → **🟢 VERT**.
-4. **À vous** : prenez **US-2**, écrivez son cas dans `test-cases.json`, relancez
-   (**« Relance le juge — itération N »**), voyez-le rouge, durcissez le prompt… puis
-   US-3, US-4, … jusqu'à vider le backlog.
+   assistant SAV, courtois, en français). Dites **« Relance le juge — itération 1 GREEN »** → **🟢 VERT**.
+4. **À vous** : prenez **US-2**, écrivez son cas, lancez **« Relance le juge — itération 2 RED »**
+   (vous le voyez rouge), durcissez le prompt, puis **« Relance le juge — itération 2 GREEN »**
+   (vert) ; puis US-3 en itération 3, et ainsi de suite jusqu'à vider le backlog.
 5. **Barre verte** : `npm test -- tp-tdd-prompt-po` passe au vert quand **tous vos cas** sont PASS.
 
 > 🖱️ **Astuce** : en `file://`, Chrome bloque la lecture auto du JSON → utilisez le

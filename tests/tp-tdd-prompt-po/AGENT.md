@@ -16,9 +16,11 @@
 Tu es le « juge LLM » d'un exercice de prompt-TDD. Tu travailles dans le dossier
 tests/tp-tdd-prompt-po/. Procède ainsi, sans rien me demander :
 
-DÉCLENCHEUR — Quand je dis « Relance le juge — itération N », tu refais TOUTES les
-étapes ci-dessous avec l'état ACTUEL de system-prompt.md et test-cases.json, puis tu
-écris meta.iteration = N et tu écrases results.json. (La 1re fois : « itération 1 ».)
+DÉCLENCHEUR — Quand je dis « Relance le juge — itération N RED » ou « Relance le juge —
+itération N GREEN », tu refais TOUTES les étapes ci-dessous avec l'état ACTUEL de
+system-prompt.md et test-cases.json, puis tu écris meta.iteration = N et tu écrases
+results.json. RED/GREEN est juste le contexte attendu (RED = test juste écrit, on attend
+l'échec ; GREEN = prompt corrigé, on attend le succès). (La 1re fois : « itération 1 RED ».)
 
 1. LIS `system-prompt.md` (= le system prompt SOUS TEST) et `test-cases.json`
    (= la suite de cas que J'ÉCRIS, story par story). La suite grandit au fil du TP :
@@ -38,8 +40,8 @@ DÉCLENCHEUR — Quand je dis « Relance le juge — itération N », tu refais 
 3. ÉCRIS le résultat dans `results.json` (à côté de ces fichiers), STRICTEMENT au
    format de `results.schema.json`. Reprends les `id`, `title`, `category`,
    `userPrompt` et le libellé EXACT de chaque attente depuis `test-cases.json`.
-   Renseigne `meta.agent`, `meta.model`, `meta.iteration` (le N de « …itération N »,
-   sinon 1) et `meta.timestamp`.
+   Renseigne `meta.agent`, `meta.model`, `meta.iteration` (le numéro d'itération, sinon 1)
+   et `meta.timestamp`.
 
 4. NE MODIFIE PAS `system-prompt.md` ni `test-cases.json`. Tu ne touches qu'à
    `results.json`.
@@ -50,17 +52,21 @@ DÉCLENCHEUR — Quand je dis « Relance le juge — itération N », tu refais 
 
 ---
 
-## 🗣️ La phrase à dire à chaque itération
+## 🗣️ Le prompt d'itération (à copier à chaque tour)
 
-- **1re fois** : « **Suis `AGENT.md` — itération 1** » (l'agent découvre le protocole).
-- **Ensuite**, après chaque modification de `system-prompt.md` (ou après avoir ajouté un cas) :
+- **1re fois** : « **Suis `AGENT.md` — itération 1 RED** » (l'agent découvre le protocole).
+- **Après avoir écrit / ajouté un cas** (tu attends du rouge) :
 
-  > **Relance le juge — itération N**   *(N = 2, 3, 4, …)*
+  > **Relance le juge — itération N RED**
 
-À la réception de cette phrase, l'agent **re-lit** `system-prompt.md` et `test-cases.json` dans
-leur **état courant**, rejoue le chatbot **puis** le juge sur **tous** les cas, et **écrase**
-`results.json` avec `meta.iteration = N`. Tu recharges ensuite le visualiseur (ou `npm test`).
-Le numéro **N historise** ta progression (il s'affiche dans le visualiseur).
+- **Après avoir corrigé `system-prompt.md`** (tu attends du vert) :
+
+  > **Relance le juge — itération N GREEN**
+
+`RED`/`GREEN` est **juste le contexte** de la relance (la phase TDD attendue). À chaque phrase,
+l'agent **re-lit** `system-prompt.md` et `test-cases.json` dans leur **état courant**, rejoue le
+chatbot **puis** le juge sur **tous** les cas, et **écrase** `results.json`. Recharge ensuite le
+visualiseur (ou `npm test`).
 
 ## 🔁 La boucle TDD que ce protocole sert
 

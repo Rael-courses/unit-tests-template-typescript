@@ -60,15 +60,22 @@ de partout**. À vous de le blinder.
 
 ## 🚀 Démarrage rapide
 
+> 📣 **Votre prompt d'itération** (à copier-coller à chaque tour) :
+> • quand vous attendez du rouge → `Relance le juge — itération N RED`
+> • après avoir corrigé le prompt → `Relance le juge — itération N GREEN`
+>
+> La 1re fois : `Suis le protocole de AGENT.md — itération 1 RED`.
+
 1. Ouvrez ce dossier dans votre agent (Claude Code, Codex, Antigravity…).
-2. Dites-lui : **« Suis le protocole de `AGENT.md` dans ce dossier — itération 1 »**.
+2. Dites-lui : **« Suis le protocole de `AGENT.md` dans ce dossier — itération 1 RED »**.
    Il lit `system-prompt.md` + `test-cases.json`, joue le bot, juge, et écrit `results.json`.
 3. **Visualisez** : double-cliquez sur [`index.html`](index.html) (Chrome), puis
    **glissez-déposez** votre `results.json` dessus. 🟢🔴
 4. **Barre verte** : `npm test` (à la racine) — le pont Jest passe au vert quand **tous**
    les cas sont PASS. *(Filtrer ce TP : `npm test -- tp-tdd-prompt-llm-judge`.)*
-5. Éditez `system-prompt.md`, puis relancez avec **« Relance le juge — itération N »**
-   (N = 2, 3, …), et regardez le rouge virer au vert.
+5. Éditez `system-prompt.md`, puis relancez avec **« Relance le juge — itération N GREEN »**
+   (et **« Relance le juge — itération N RED »** quand vous ajoutez un cas adverse) ; regardez
+   le rouge virer au vert.
 
 > 🖱️ **Astuce auto-chargement** : ouvert en `file://`, Chrome bloque la lecture auto du
 > JSON → utilisez le glisser-déposer ou le bouton **« Charger l'exemple »**. Pour un
