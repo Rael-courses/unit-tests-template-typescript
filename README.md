@@ -11,6 +11,20 @@ This template is set up to use TypeScript with Jest for unit testing. It feature
 - **Dependency Injection via TSyringe**: Lightweight DI container with decorator support
 - **Jest for Testing**: Comprehensive testing framework with mocking and coverage support
 
+## 🤖 TP — Le TDD au-delà du code (prompt-TDD)
+
+Deux TP montrent que le **TDD est une démarche**, pas une syntaxe : on l'applique ici à un
+**system prompt** de chatbot, évalué par un **LLM juge** (l'agent de code de l'élève — aucune
+clé API requise). Chaque TP fournit un **visualiseur HTML** vert/rouge à ouvrir dans Chrome et
+un **pont Jest** (`npm test`).
+
+1. **[Chef Léo — LLM as a judge](tests/tp-tdd-prompt-llm-judge/README.md)** : les tests sont
+   **fournis**, l'élève **raffine** le system prompt (persona, périmètre, sécurité, secret de la
+   maison) jusqu'au vert. *Découverte du concept.*
+2. **[Zéphyr SAV — vrai TDD sur un backlog de PO](tests/tp-tdd-prompt-po/README.md)** : l'élève
+   **écrit chaque test** à partir des user stories d'un Product Owner, le voit rouge, puis fait
+   évoluer le prompt. *Discipline test-first.*
+
 ## Installation
 
 1. Install dependencies:

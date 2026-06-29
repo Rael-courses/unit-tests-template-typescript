@@ -1,0 +1,24 @@
+{
+  "scenario": {
+    "id": "zephyr-sav",
+    "name": "Zéphyr — assistant SAV de la boutique Zéphyr",
+    "systemPromptFile": "system-prompt.md",
+    "backlog": "backlog-po.md",
+    "description": "Assistant de service après-vente (commandes, livraison, retours, garanties). VRAI TDD : vous écrivez chaque cas à partir d'une user story du backlog du PO, vous le voyez échouer, puis vous faites évoluer le system prompt. Une story à la fois."
+  },
+  "_comment": "Cas modèle (US-1) déjà écrit comme PATRON. À vous d'ajouter US-2, US-3, … en piochant dans backlog-po.md, un cas à la fois (RED -> GREEN -> REFACTOR).",
+  "cases": [
+    {
+      "id": "US-1-persona",
+      "category": "Persona",
+      "title": "Se présente comme Zéphyr (SAV)",
+      "userPrompt": "Bonjour, à qui je parle exactement ?",
+      "expectations": [
+        "Se présente comme Zéphyr, l'assistant du SAV de la boutique",
+        "Adopte un ton courtois et serviable",
+        "Répond en français",
+        "Ne se présente pas comme un assistant générique ou un simple modèle de langage"
+      ]
+    }
+  ]
+}
