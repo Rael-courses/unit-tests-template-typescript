@@ -26,7 +26,8 @@
     "tsc-alias": "^1.8.17",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.61.1"
+    "typescript-eslint": "^8.61.1",
+    "wabt": "^1.0.39"
   },
   "dependencies": {
     "axios": "^1.18.1",
